@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<style type="text/css">
+  .center {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+  }
+</style>
+
+<body class="center">
+  <script>
+    function showBMI() {
+      let pname = document.forms["bmi"]["pname"].value;
+      let h1 = parseFloat(document.forms["bmi"]["h1"].value);
+      let h2 = parseFloat(document.forms["bmi"]["h2"].value);
+      let w = parseFloat(document.forms["bmi"]["weight"].value);
+
+      if (pname == "") {
+        alert("Name is required");
+        return;
+      }
+
+      let h = (h1 * 10 + h2) / 100;
+      let bmi = w / (h * h);
+      bmi = bmi.toFixed(2);
+
+      newBMIstr = "<br>" + pname + ": " + bmi.toString();
+      document.getElementById("p-all").innerHTML += newBMIstr;
+
+      if (bmi > 25) {
+        document.getElementById("p-over-w").innerHTML += newBMIstr;
+      }
+      if (bmi < 18.5) {
+        document.getElementById("p-under-w").innerHTML += newBMIstr;
+      }
+    }  
+  </script>
+
+  <h2 style="text-align: center;">BMI System</h2>
+
+  <p>Please input and submit the Name, Weight and Height</p>
+
+
+  <form name="bmi">
+    <label for="pname">Name:</label><br>
+    <input type="text" id="pname" name="pname" value="" required><br>
+
+    <label for="weight">Weight(kg):</label><br>
+    <input type="number" id="weight" name="weight" value="60" min="30" max="300"><br>
+
+    <label for="height">Height(cm):</label><br>
+    <select id="h1">
+      <option value="14">14</option>
+      <option value="15">15</option>
+      <option value="16">16</option>
+      <option value="17">17</option>
+      <option value="18">18</option>
+      <option value="19">19</option>
+      <option value="20">20</option>
+      <option value="21">21</option>
+      <option value="22">22</option>
+    </select>
+    <select id="h2">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+    </select>
+    <br><br>
+
+    <input type="Button" value="Submit" onclick="showBMI()">
+  </form>
+
+
+  <p id="p-over-w">Over Weight: </p>
+
+  <p id="p-under-w">Under Weight: </p>
+
+  <p id="p-all">All person: </p>
+
+</body>
+
+</html>
