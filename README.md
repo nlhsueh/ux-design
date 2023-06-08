@@ -25,7 +25,7 @@
 🍎 命令列 BMI 改版歷程
 * BMIv0: 最初的版本
 
-* BMIv1: 適當的提示
+* BMIv1: [適當的提示](bmi-python/bmiv1.py)
     * v0😡 無法執行，無窮迴圈
     * v0😩 沒有適當的提示單位，常造成使用者輸入錯誤 
     * 🍎 add() -> append()
@@ -86,7 +86,7 @@
 <img src="img/BMI_web.png" width="450">
 
 🍎 Web BMI 改版歷程
-* BMIw1: 最初的版本
+* BMIw1: [最初的版本](BMI-web/w1.html)
 
 * BMIw2: 限制是最好的防呆
     * w1😩 輸入沒有防呆
