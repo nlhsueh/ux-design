@@ -4,17 +4,23 @@
 
 完整線上課程請看 [這裡](https://www.openedu.tw/course?id=1557) 
 
+目錄
+- [多元運算思維：使用者體驗設計](#多元運算思維使用者體驗設計)
+  - [教材使用說明（教師）](#教材使用說明教師)
+  - [BMI-python](#bmi-python)
+  - [BMI-web](#bmi-web)
+  - [Code in Github](#code-in-github)
 
 ## 教材使用說明（教師）
 多半的教材在「使用體驗」和「運算思維」是分開的，本教材希望讓學生在實作中體驗使用體驗設計的概念。我們希望學習程式設計的學生在剛接觸程式設計的時候就能夠體驗 UX 的重要性。
 
-<img src="img/teach_method.png" width="400">
+<img src="img/teach_method.png" width="450">
 
 ## BMI-python
 
 分為兩個模組，第一個是以 python 為主的基礎教材，程式碼請見 BMI-python 目錄，其程式碼之演進如下：
 
-![](img/BMI_python.png)
+<img src="img/BMI_python.png" width="450">
 
 🍎 命令列 BMI 改版歷程
 * BMIv0: 最初的版本
@@ -76,7 +82,8 @@
 ## BMI-web
 
 第二個模組是以 web 來講解 UX 的重要，程式碼請見 BMI-web，其程式碼之演進如下：
-![](img/BMI_web.png)
+
+<img src="img/BMI_web.png" width="450">
 
 🍎 Web BMI 改版歷程
 * BMIw1: 最初的版本
@@ -114,5 +121,5 @@
     * w7 😩 資料登入錯誤，無法修正！使用者一後輸入資料心驚驚。
     * 🍎 點及個人資料後會進入編修模式，進行編修。 
 
-## 📂 Code in Github
+## Code in Github
 [Code in GitHub](https://github.com/nlhsueh/ux-design/tree/main/BMI-web)
