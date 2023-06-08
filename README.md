@@ -9,6 +9,7 @@
   - [教材使用說明（教師）](#教材使用說明教師)
   - [BMI-python](#bmi-python)
   - [BMI-web](#bmi-web)
+  - [BMI-object](#bmi-object)
   - [Code in Github](#code-in-github)
 
 ## 教材使用說明（教師）
@@ -120,6 +121,22 @@
 * BMIw8 可以修正資料
     * w7 😩 資料登入錯誤，無法修正！使用者一後輸入資料心驚驚。
     * 🍎 點及個人資料後會進入編修模式，進行編修。 
+
+## BMI-object
+
+使用物件導向的方式來設計 BMI 的例子
+
+* BMIv10 物件設計
+    * 建立 People 類別，封裝姓名，身高，體重等資訊
+    * 建立 Group 類別，提供 addPeople() 將某人加入群組, getHeight() 取得群組的平均身高等方法
+    * 瞭解 module, method, function 的差異
+* BMIv11
+    * Group 分為兩類，一個是體育班 SportClass, 一個升學班 CollegeClass, 假設兩個班級的 BMI 標準不同
+    * 了解物件導向中繼承的概念
+    * Group 提供共同的 method: avgHeight(), avgWeight(), avgBMI() 等，但是否健康取決於是哪一班的標準
+    * People 分為男生 Male 與女生 Female, 前者 後者
+* BMIv12
+    * 
 
 ## Code in Github
 [Code in GitHub](https://github.com/nlhsueh/ux-design/tree/main/BMI-web)
