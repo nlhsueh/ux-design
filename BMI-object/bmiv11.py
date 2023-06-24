@@ -1,6 +1,11 @@
+from abc import ABC, abstractmethod
+import sys
+
+
 def bmi(h, w):
     bmi = round(w/(h**2), 1)
     return bmi
+
 
 class People:
     def __init__(self, name, h, w):
@@ -13,7 +18,40 @@ class People:
         return bmi
 
     def __str__(self):
-        return f"({self.name},bmi:{self.bmi})"
+        return f"({self.name},bmi:{self.bmi}), {self.getHealthLevel()}"
+
+    @abstractmethod
+    def getHealthLevel(self):
+        pass
+
+
+class GeneralStudent(People):
+    def __init__(self, name, h, w):
+        super().__init__(name, h, w)
+
+    def getHealthLevel(self):
+        if self.bmi >= 24:
+            self.hLevel = '太重'
+        elif self.bmi < 18:
+            self.hLevel = '太輕'
+        else:
+            self.hLevel = '標準'
+        return self.hLevel
+
+
+class AthleteStudent(People):
+    def __init__(self, name, h, w):
+        super().__init__(name, h, w)
+
+    def getHealthLevel(self):
+        if self.bmi >= 23:
+            self.hLevel = '太重'
+        elif self.bmi < 19:
+            self.hLevel = '太輕'
+        else:
+            self.hLevel = '標準'
+        return self.hLevel
+
 
 class Group:
     def __init__(self, gName):
@@ -58,18 +96,18 @@ class Group:
     def avgHeight(self):
         h = 0
         for ph in self.pList:
-            h += ph.h            
+            h += ph.h
         return round(h/len(self.pList), 1)
-      
+
     def getName(self):
-        return self.name        
+        return self.name
 
     def __str__(self):
         s = f'Group {self.name} has the people: '
         peopleStr = [str(p) for p in self.pList]
         s += ', '.join(peopleStr)
         return s
-      
+
 
 # set 100 random people
 def setVirtualData(g):
@@ -78,18 +116,20 @@ def setVirtualData(g):
         n = 'p' + str(i)
         h = r.randint(150, 170)/100
         w = r.randint(50, 100)
-        p = People(n, h, w)
+        p = GeneralStudent(n, h, w)
         g.addPeople(p)
 
+
 # set People data from console input
-import sys
+
+
 def main():
     print('-------------------------------')
     print('   Better Life Health Report   ')
     print('-------------------------------')
     g = Group('FCU')
     arg = sys.argv
-    if len(arg) > 1 and arg[1]=='v':
+    if len(arg) > 1 and arg[1] == 'v':  # v: virtual data input
         # set data from virtual
         setVirtualData(g)
     else:
@@ -97,6 +137,7 @@ def main():
         g.inputData()
     print(g)
     print(f"The average height of {g.getName()} is {g.avgHeight()}m")
+
 
 # 程式的入口點
 if __name__ == "__main__":

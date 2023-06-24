@@ -130,10 +130,17 @@
     * 建立 People 類別，封裝姓名，身高，體重等資訊
     * 建立 Group 類別，提供 addPeople() 將某人加入群組, getHeight() 取得群組的平均身高等方法
     * 瞭解 module, method, function 的差異
+    * Group
+      * __init__(), __str()__, avgHeight(), addPeople(), getName(), inputData()
+    * People
+      * __init__(), getName(), __str__()
 * BMIv11 分類與繼承
     * Group 分為兩類，一個是體育班 SportClass, 一個升學班 CollegeClass, 假設兩個班級的 BMI 標準不同
     * 了解物件導向中繼承的概念
-    * Group 提供共同的 method: avgHeight(), avgWeight(), avgBMI() 等，但是否健康取決於是哪一班的標準
+    * Group 提供共同的 method: avgHeight(), avgWeight(), avgBMI() 等
+    * 學生的健康層級 (標準、過重、過輕) 取決於其所屬的班級。(此為假設性之需求)
+      * 升學班 大於等於 24 則過重, 小於 18 過輕。介於 18-24 為標準。
+      * 體育班 大於等於 23 則過重, 小於 19 過輕。介於 19-23 為標準。
     * BMR (Basal Metabolic Rate; 「基礎代謝率」) 即是人體為了維持生命及生理機能所需的最低能量
     * BMR與年齡及性別有關係，因此我們為 People 加上一個 age 的欄位，People 也分為兩類：Male 與女生 Female, 前者 後者
         * 男性BMR：（10 X 公斤體重）+ （6.25 X 公分身高）– （5 X 年齡歲數）+ 5
@@ -143,7 +150,7 @@
 * BMIv12 雙向參考
     * 除了 Group 會紀錄 People 以外，People 也會紀錄他屬於哪一個 Group, 如此方便計算 caloricNeeds
     * 透過 instanceOf 來判斷是哪一個類別
-    * 
+
 
 ## Code in Github
 [Code in GitHub](https://github.com/nlhsueh/ux-design/tree/main/BMI-web)
